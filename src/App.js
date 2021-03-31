@@ -33,13 +33,27 @@ function App() {
         <Loading />
       </main>
     );
-  } else {
+  }
+  if (toursArr.length === 0 && isLoading === false) {
     return (
       <main>
-        <Tours tours={toursArr} removeTour={removeTour} />
+        <section>
+          <div className="title">
+            <h2>No more tours</h2>
+            <div className="underline"></div>
+            <button className="btn" onClick={(e) => fetchTours(url)}>
+              Refresh
+            </button>
+          </div>
+        </section>
       </main>
     );
   }
+  return (
+    <main>
+      <Tours tours={toursArr} removeTour={removeTour} />
+    </main>
+  );
 }
 
 export default App;
