@@ -31,7 +31,7 @@ function App() {
   } else {
     return (
       <main>
-        <Tours />
+        <Tours tours={toursArr} />
       </main>
     );
   }
